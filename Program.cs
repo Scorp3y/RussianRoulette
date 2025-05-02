@@ -153,15 +153,15 @@ namespace RussianRoulette
             int num;
             while (true)
             {
-                Console.Write("Выбери число от 1 до 6: ");
+                Console.Write("Выбери число от 1 до 3: ");
                 string input = Console.ReadLine();
-                if (int.TryParse(input, out num) && num >= 1 && num <= 6)
+                if (int.TryParse(input, out num) && num >= 1 && num <= 3)
                     break;
                 Console.WriteLine("Введено некорректное значение! Попробуй снова. ⚠");
             }
 
             Random rnd = new Random();
-            int rndNum = rnd.Next(1, 7);
+            int rndNum = rnd.Next(1, 4);
             Console.WriteLine("Повезло :( ");
             Console.WriteLine("Пуля была в числе: " + rndNum);
 
