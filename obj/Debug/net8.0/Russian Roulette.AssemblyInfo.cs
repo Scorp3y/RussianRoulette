@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Russian Roulette")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb785656574a47437476d8db5c55587f859eac47")]
 [assembly: System.Reflection.AssemblyProductAttribute("Russian Roulette")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Russian Roulette")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
