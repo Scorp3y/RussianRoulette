@@ -63,9 +63,19 @@ namespace Russian_Roulette {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] allstar {
+        internal static byte[] abaybe {
             get {
-                object obj = ResourceManager.GetObject("allstar", resourceCulture);
+                object obj = ResourceManager.GetObject("abaybe", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] allstare {
+            get {
+                object obj = ResourceManager.GetObject("allstare", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -76,16 +86,6 @@ namespace Russian_Roulette {
         internal static byte[] artShrek {
             get {
                 object obj = ResourceManager.GetObject("artShrek", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Baybe {
-            get {
-                object obj = ResourceManager.GetObject("Baybe", resourceCulture);
                 return ((byte[])(obj));
             }
         }

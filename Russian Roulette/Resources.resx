@@ -121,14 +121,8 @@
   <data name="FunnyWallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\FunnyWallpaper.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="allstar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\allstar.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="artShrek" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\artShrek.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Baybe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\Baybe.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\cat.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -171,5 +165,11 @@
   </data>
   <data name="smallKing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\smallKing.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="abaybe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\abaybe.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="allstare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\allstare.wav;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
