@@ -1,52 +1,27 @@
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\bin\Debug\net8.0\Russian Roulette.exe
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\bin\Debug\net8.0\Russian Roulette.dll
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\bin\Debug\net8.0\Russian Roulette.deps.json
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\bin\Debug\net8.0\Russian Roulette.runtimeconfig.json
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\bin\Debug\net8.0\Russian Roulette.pdb
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.AssemblyInfoInputs.cache
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.AssemblyInfo.cs
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.csproj.CoreCompileInputs.cache
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.dll
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\obj\Debug\net8.0\refint\Russian Roulette.dll
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.pdb
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.genruntimeconfig.cache
-C:\Users\artem\source\repos\Russian Roulette\Russian Roulette\obj\Debug\net8.0\ref\Russian Roulette.dll
-C:\Users\artem\RussianRoulette\bin\Debug\net8.0\Russian Roulette.exe
-C:\Users\artem\RussianRoulette\bin\Debug\net8.0\Russian Roulette.deps.json
-C:\Users\artem\RussianRoulette\bin\Debug\net8.0\Russian Roulette.runtimeconfig.json
-C:\Users\artem\RussianRoulette\bin\Debug\net8.0\Russian Roulette.dll
-C:\Users\artem\RussianRoulette\bin\Debug\net8.0\Russian Roulette.pdb
-C:\Users\artem\RussianRoulette\obj\Debug\net8.0\Russian Roulette.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\artem\RussianRoulette\obj\Debug\net8.0\Russian Roulette.AssemblyInfoInputs.cache
-C:\Users\artem\RussianRoulette\obj\Debug\net8.0\Russian Roulette.AssemblyInfo.cs
-C:\Users\artem\RussianRoulette\obj\Debug\net8.0\Russian Roulette.csproj.CoreCompileInputs.cache
-C:\Users\artem\RussianRoulette\obj\Debug\net8.0\Russian Roulette.sourcelink.json
-C:\Users\artem\RussianRoulette\obj\Debug\net8.0\Russian Roulette.dll
-C:\Users\artem\RussianRoulette\obj\Debug\net8.0\refint\Russian Roulette.dll
-C:\Users\artem\RussianRoulette\obj\Debug\net8.0\Russian Roulette.pdb
-C:\Users\artem\RussianRoulette\obj\Debug\net8.0\Russian Roulette.genruntimeconfig.cache
-C:\Users\artem\RussianRoulette\obj\Debug\net8.0\ref\Russian Roulette.dll
-C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.AssemblyInfoInputs.cache
-C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.AssemblyInfo.cs
-C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.csproj.CoreCompileInputs.cache
-C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.sourcelink.json
-C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.dll
-C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\refint\Russian Roulette.dll
-C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.pdb
 C:\Users\artem\RussianRoulette\Russian Roulette\bin\Debug\net8.0\Russian Roulette.exe
 C:\Users\artem\RussianRoulette\Russian Roulette\bin\Debug\net8.0\Russian Roulette.deps.json
 C:\Users\artem\RussianRoulette\Russian Roulette\bin\Debug\net8.0\Russian Roulette.runtimeconfig.json
 C:\Users\artem\RussianRoulette\Russian Roulette\bin\Debug\net8.0\Russian Roulette.dll
 C:\Users\artem\RussianRoulette\Russian Roulette\bin\Debug\net8.0\Russian Roulette.pdb
-C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian_Roulette.Resources.resources
-C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.csproj.GenerateResource.cache
-C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.genruntimeconfig.cache
-C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\ref\Russian Roulette.dll
 C:\Users\artem\RussianRoulette\Russian Roulette\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\artem\RussianRoulette\Russian Roulette\bin\Debug\net8.0\System.Drawing.Common.dll
 C:\Users\artem\RussianRoulette\Russian Roulette\bin\Debug\net8.0\System.Private.Windows.Core.dll
 C:\Users\artem\RussianRoulette\Russian Roulette\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.csproj.AssemblyReference.cache
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian_Roulette.Resources.resources
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.csproj.GenerateResource.cache
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.AssemblyInfoInputs.cache
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.AssemblyInfo.cs
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.csproj.CoreCompileInputs.cache
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.sourcelink.json
 C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian .678F2724.Up2Date
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.dll
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\refint\Russian Roulette.dll
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.pdb
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.genruntimeconfig.cache
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\ref\Russian Roulette.dll
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Interop.IWshRuntimeLibrary.dll
+C:\Users\artem\RussianRoulette\Russian Roulette\obj\Debug\net8.0\Russian Roulette.csproj.ResolveComReference.cache
+C:\Users\artem\RussianRoulette\Russian Roulette\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\artem\RussianRoulette\Russian Roulette\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll

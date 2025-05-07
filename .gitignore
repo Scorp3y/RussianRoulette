@@ -1,4 +1,5 @@
 /.vs
-/bin
-/bin/Debug
-/bin/Debug/net8.0
+/Russian Roulette/obj
+/Russian Roulette/obj/Debug
+/Russian Roulette/obj/Debug/net8.0-windows
+/Russian Roulette/obj

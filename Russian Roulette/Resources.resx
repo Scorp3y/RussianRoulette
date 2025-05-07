@@ -121,4 +121,55 @@
   <data name="FunnyWallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\FunnyWallpaper.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="allstar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\allstar.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="artShrek" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\artShrek.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Baybe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Baybe.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\cat.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Cat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Cat1.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Cat2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Cat2.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Dragon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Dragon.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fairy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\fairy.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Fiona" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Fiona.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="headShrek" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\headShrek.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Osel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Osel.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OsloShrek" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\OsloShrek.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Pechen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Pechen.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="princeCrarli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\princeCrarli.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="shrek3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\shrek3.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ShrekArtik" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ShrekArtik.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="smallKing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\smallKing.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
