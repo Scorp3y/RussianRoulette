@@ -231,16 +231,17 @@ namespace RussianRoulette
             Directory.CreateDirectory(backupDir);
             Directory.CreateDirectory(backupIcons);
 
+            string wallpaperPath = Path.Combine(backupDir, "wallpaper.bmp");
 
-            
-
-            string currentWallpaper = wallpaper as string ?? string.Empty;
-
-
-            if (currentWallpaper == null)
+            if (File.Exists(wallpaperPath)) 
             {
-                Console.WriteLine("⚠️ Не удалось найти текущие обои.");
+                SetWallpaper(wallpaperPath); 
             }
+            else
+            {
+                Console.WriteLine("⚠️ Wallpaper file not found.");
+            }
+
 
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string[] shortcuts = Directory.GetFiles(desktopPath, "*.lnk");
