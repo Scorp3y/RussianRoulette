@@ -59,10 +59,15 @@ namespace RussianRoulette
 
         static bool IsRunningAsAdmin()
         {
-            WindowsIdentity identity = WindowsIdentity.GetCurrent();
-            WindowsPrincipal principal = new WindowsPrincipal(identity);
-            return principal.IsInRole(WindowsBuiltInRole.Administrator);
+            if (OperatingSystem.IsWindows())
+            {
+                WindowsIdentity identity = WindowsIdentity.GetCurrent();
+                WindowsPrincipal principal = new WindowsPrincipal(identity);
+                return principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+            return false; 
         }
+
 
 
         [DllImport("user32.dll", SetLastError = true)]
@@ -172,7 +177,7 @@ namespace RussianRoulette
             while (true)
             {
                 Console.Write("Выбери число от 1 до 3: ");
-                string input = Console.ReadLine();
+                string? input = Console.ReadLine();
                 if (int.TryParse(input, out num) && num >= 1 && num <= 3)
                     break;
                 Console.WriteLine("Введено некорректное значение! Попробуй снова. ⚠");
@@ -247,8 +252,9 @@ namespace RussianRoulette
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Упс...");
+                    Console.WriteLine($"Ошибка: {ex.Message}");
                 }
+
             }
 
 
@@ -258,6 +264,7 @@ namespace RussianRoulette
             for (int i = 0; i < 10; i++)
             {
                 Process.Start(exePath, "child");
+
             }
 
             
